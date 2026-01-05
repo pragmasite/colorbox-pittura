@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm earthy palette for painting/construction business */
+    --background: 35 25% 97%;           /* Warm off-white */
+    --foreground: 25 35% 15%;           /* Deep brown */
+
+    --card: 35 20% 98%;                 /* Slightly warmer white */
+    --card-foreground: 25 35% 15%;
+
+    --primary: 25 75% 45%;              /* Terracotta orange - main brand color */
+    --primary-foreground: 0 0% 100%;    /* White text on primary */
+
+    --secondary: 35 35% 88%;            /* Warm beige */
+    --secondary-foreground: 25 35% 20%;
+
+    --muted: 35 25% 92%;                /* Light warm gray */
+    --muted-foreground: 25 20% 45%;     /* Medium warm gray */
+
+    --accent: 45 60% 55%;               /* Golden accent */
+    --accent-foreground: 25 35% 15%;
+
+    --border: 35 20% 88%;               /* Subtle warm border */
+    --input: 35 20% 88%;
+    --ring: 25 75% 45%;                 /* Focus rings same as primary */
+
+    --radius: 0.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .section-header {
+    @apply text-center mb-16;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-5xl font-semibold text-foreground mb-6;
+  }
+
+  .section-divider {
+    @apply w-24 h-1 bg-primary mx-auto mb-8 rounded-full;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
